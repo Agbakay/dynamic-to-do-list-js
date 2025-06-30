@@ -22,13 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
     removeButton.textContent = "Remove";
     removeButton.className = "remove-btn";
 
+    removeButton.onclick = function () {
+      taskItem.removeChild(taskList);
+    };
+
     taskItem.appendChild(removeButton);
     taskList.appendChild(taskItem);
 
     // Button to remove its parent task item when clicked.
-    removeButton.addEventListener("click", () => {
-      taskItem.remove();
-    });
 
     // Clear the input box and put the cursor back in it for easy new entries.
     taskInput.value = "";
