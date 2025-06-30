@@ -15,21 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Add a new list item (<li>).
     const taskItem = document.createElement("li");
-    taskItem.textContent = taskText; // Set its text to what the user typed.
+    taskItem.textContent = taskText;
 
     // Add a "Remove" button for this task.
     const removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
     removeButton.className = "remove-btn";
 
+    taskItem.appendChild(removeButton);
+    taskList.appendChild(taskItem);
+
     // Button to remove its parent task item when clicked.
     removeButton.addEventListener("click", () => {
       taskItem.remove();
     });
-
-    // Add the "Remove" button to the end of the list item.
-    taskItem.appendChild(removeButton);
-    taskList.appendChild(taskItem);
 
     // Clear the input box and put the cursor back in it for easy new entries.
     taskInput.value = "";
