@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const addButton = document.getElementById("add-task-btn");
   const taskList = document.getElementById("task-list");
 
-  function addNewTask() {
+  function addTask() {
     const taskText = taskInput.value.trim();
 
     if (taskText === "") {
@@ -29,8 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Add the "Remove" button to the end of the list item.
     taskItem.appendChild(removeButton);
-
-    // Add our shiny new task item to the main list.
     taskList.appendChild(taskItem);
 
     // Clear the input box and put the cursor back in it for easy new entries.
@@ -39,11 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // When the "Add Task" button is clicked, run our function.
-  addButton.addEventListener("click", addNewTask);
+  addButton.addEventListener("click", addTask);
 
   taskInput.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
-      addNewTask();
+      addTask();
     }
   });
 });
